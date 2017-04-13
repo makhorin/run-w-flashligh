@@ -24,7 +24,7 @@ public class EnviromentGenerator : MonoBehaviour
 	void Update ()
 	{
 
-	    var dist = -_existingEnviroment[1].position.z - DestroyPoint.z;
+	    var dist = -_existingEnviroment[1].position.z + DestroyPoint.z;
 	    if (dist > 0f)
 	    {
 	        Destroy(_existingEnviroment[1].gameObject);

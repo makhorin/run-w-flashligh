@@ -25,7 +25,7 @@ public class FieldOfView : MonoBehaviour {
 		viewMesh.name = "View Mesh";
 		viewMeshFilter.mesh = viewMesh;
 
-		StartCoroutine ("FindTargetsWithDelay", .2f);
+		//StartCoroutine ("FindTargetsWithDelay", .2f);
 	}
 
 
@@ -35,6 +35,17 @@ public class FieldOfView : MonoBehaviour {
 			FindVisibleTargets ();
 		}
 	}
+
+    void FixedUpdate()
+    {
+        foreach (var target in visibleTargets)
+        {
+            var enemy = target.gameObject.GetComponent<EnemyController>();
+            if (enemy == null)
+                return;
+            enemy.SawLight();
+        }
+    }
 
 	void LateUpdate() {
 		DrawFieldOfView ();

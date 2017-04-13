@@ -6,6 +6,6 @@ public class EnviromentScroller : MonoBehaviour {
 
 	void Update () {
 
-	    transform.Translate(0f,0f, Time.time * -ScrollSpeed);
+	    transform.Translate(0f,0f, -ScrollSpeed);
     }
 }
